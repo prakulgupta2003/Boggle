@@ -128,6 +128,10 @@ int main(){
     TrieNode* temp=NULL;
     ifstream dictionary;
     dictionary.open("english.txt");       // opening file containing all words,letters and abbreviations
+    if(!dictionary){
+        cout<<"Error Opening Dicitonary!. Verify existance and permissions for file."<<endl;
+        return -1;
+    }
     vector<string> words;
     int count=0;
     string files;
