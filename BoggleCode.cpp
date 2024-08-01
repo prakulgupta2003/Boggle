@@ -2,7 +2,7 @@
 //  main.cpp
 //  boggle
 //
-//  Created by Shishir Garg on 10/7/23.
+//  Created by Prakul Gupta on 10/7/24.
 //
 #include <iostream>
 #include <fstream> 
@@ -22,7 +22,7 @@ public:
     TrieNode(char value){
         this->value=value;
         for(int i=0;i<26;i++){
-            child[i]=0;
+            child[i]=NULL;
         }
         endWord=0;
     }
@@ -34,8 +34,7 @@ void Trie(string word,TrieNode* root){      // function insert a word into a tri
         if(root->child[word[i]-'a']==NULL){
             root->child[word[i]-'a']=new TrieNode(word[i]);     // creating a new node
         }
-        root=root->child[word[i]-'a'];
-        
+        root=root->child[word[i]-'a'];  
     }
     root->endWord++;
     return;
